@@ -1,0 +1,94 @@
+
+
+
+// Main form
+
+.main-form {
+  padding-top: 40px;
+
+  .field {
+    display: flex;
+
+    input {
+      display: block;
+      padding: 17px 16px;
+      width: 100%;
+      border: 1px solid $color-dark-bg;
+      border-radius: 10px;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+  
+  .alert {
+    min-height: 57px;
+  }
+
+  .submit {
+    display: flex;
+    align-items: center;
+    
+    button {
+      display: block;
+    }
+
+    .politic {
+      padding-left: 16px;
+      font-size: 12px;
+
+      label {
+        padding-left: 6px;
+        cursor: pointer;
+      }
+
+      a {
+        color: $color-blue;
+      }
+    }
+  }
+
+  @include respond(medium-sm) {
+
+    .field {
+      flex-direction: column;
+
+      input {
+        max-width: 280px;
+        
+        &:first-child {
+          margin-right: 0;
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    .submit {
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 280px;
+
+      button {
+        width: 100%;
+      }
+
+      .politic {
+        padding-left: 0;
+        padding-top: 14px;
+      }
+    }
+  }
+
+  @include respond(small) {
+    width: 100%;
+
+    .field {
+      align-items: center;
+    }
+
+    .submit {
+      margin: 0 auto;
+    }
+  }
+}

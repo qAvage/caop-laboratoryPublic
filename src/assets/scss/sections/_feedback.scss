@@ -1,0 +1,101 @@
+#feedback {
+
+  .feedback-wrap {
+    padding: 50px 0;
+    background-color: $color-light-bg;
+  }
+
+  .feedback-content {
+    display: flex;
+  }
+  
+  .calendar, .content {
+    width: 50%;
+  }
+
+  .icon {
+    position: relative;
+    width: 82%;
+
+    &::after {
+      content: "";
+      padding-top: 88%;
+      display: block;
+    }
+  }
+
+  .icon-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 40px 50px 50px 40px;
+    background-color: $color-white;
+    border-radius: 20px;
+  }
+
+  .calendar {
+    align-self: center;
+  }
+
+  .content {
+    
+    h2 {
+      max-width: 500px;
+    }
+
+    p {
+      padding-top: 16px;
+      max-width: 400px;
+    }
+  }
+
+  @include respond(large) {
+
+    .icon-wrap {
+      padding: 30px;
+    }
+  }
+
+  .content {
+    padding: 40px 0;
+  }
+
+  @include respond(medium) {
+
+  }
+
+  @include respond(medium-sm) {
+
+    .feedback-content {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .calendar, .content {
+      width: 100%;
+    }
+
+    .calendar {
+      padding-top: 30px;
+      order: 1;
+    }
+
+    .icon {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  @include respond(small) {
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+// Utilities
+
+// Disable 
+
+.u-no-select {
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+// Preload
+
+.u-preload * {
+  $null-transition: none !important;
+
+  -webkit-transition: $null-transition;
+  -moz-transition: $null-transition;
+  -ms-transition: $null-transition;
+  -o-transition: $null-transition;
+  transition: $null-transition;
+}

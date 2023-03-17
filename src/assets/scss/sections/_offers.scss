@@ -1,0 +1,208 @@
+#offers {
+
+  .title {
+    max-width: 500px;
+
+    h2 {
+      padding: 15px 0;
+    }
+  }
+
+  .slider {
+    position: relative;
+    padding-top: 40px;
+
+    .flickity-viewport {
+      transition: height 0.2s;
+    }
+
+    .flickity-page-dots {
+
+      .dot {
+        background: $color-khaki;
+        opacity: 1;
+      }
+
+      .is-selected {
+        background: $color-light-blue;
+      }
+    }
+    
+
+    .buttonSlider {
+      display: flex;
+      position: absolute;
+      gap: 10px;
+      right: 0;
+      top: -15px;
+
+      .ui-svg-icon {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        fill: $color-khaki;
+        transition: fill 150ms ease-in;
+
+        &:hover {
+          fill: $color-blue;
+        }
+
+        &:active {
+          fill: $color-blue;
+        }
+
+        &:last-of-type {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    
+    .carousel-cell {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 20px;
+      padding-bottom: 20px;
+      width: calc(33.333% - 13.3px);
+      height: 410px;
+      background: $color-white;
+      border-radius: 16px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 1px solid $color-light-bg;
+        border-radius: 16px;
+      }
+    }
+
+    .flickity-page-dots {
+      display: none;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding-left: 18px;
+      min-height: 70px;
+      position: relative;
+      color: $color-white;
+      background-color: $color-blue;
+      border-radius: 10px;
+    }
+
+    .body {
+      position: relative;
+      padding: 14px 21px 0 21px;
+      margin-bottom: 14px;
+      flex-grow: 1;
+      overflow-y: auto;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+
+        .content {
+          flex-grow: 1;
+        }
+
+        &>span {
+          display: block;
+          padding-left: 30px;
+          white-space: nowrap;
+        }
+
+        .several {
+
+          &:not(:first-child) {
+            border-top: 1px solid $color-dark-bg;
+          }
+
+          &:not(:last-child, :first-child) {
+            padding: 8px 0;
+          }
+
+          &:first-child {
+            padding-bottom: 8px;
+          }
+  
+          &:last-child {
+            padding-top: 8px;
+          }
+        }
+      }
+
+      .multiple {
+
+        &:not(:last-child, :first-child) {
+          padding: 8px 0;
+        }
+
+        &:first-child {
+          padding-bottom: 8px;
+        }
+
+        &:last-child {
+          padding-top: 8px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-dark-bg;
+        }
+      }
+    }
+
+    .bottom {
+
+      button {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        z-index: 1;
+      }
+    }
+  }
+
+  @include respond(medium) {
+
+    .slider {
+
+      .carousel-cell {
+        width: calc(50% - 10px);
+      }
+
+      .flickity-page-dots {
+        display: block;
+      }
+    }
+  }
+
+  @include respond(small) {
+
+    .slider {
+
+      .buttonSlider {
+        display: none;
+      }
+
+      .carousel-cell {
+        height: auto;
+        min-height: 400px;
+        width: 100%;
+
+        &::before {
+          margin-bottom: 3px;
+        }
+      }
+
+      .body {
+        overflow: visible;
+      }
+    }
+  }
+}

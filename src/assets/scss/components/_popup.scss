@@ -1,0 +1,128 @@
+#popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color-blue;
+    opacity: 0.5;
+  }
+
+  .inner {
+    margin-right: 18px;
+    padding: 50px 100px;
+    position: relative;
+    max-width: 780px;
+    // height: 400px;
+    background-color: $color-white;
+    z-index: 102;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+
+    .ui-svg-icon {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      stroke: $color-gray;
+      cursor: pointer;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .submit {
+      flex-direction: column;
+
+      .btn {
+        margin-bottom: 16px;
+        width: 280px;
+      }
+    }
+
+    @include respond(medium) {
+      padding: 20px 50px;
+      // height: 320px;
+      max-width: 600px;
+    }
+
+    @include respond(medium-sm) {
+      // height: 490px;
+      padding: 50px 22px;
+
+      h2 {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .field {
+        align-items: center;
+      }
+
+      .submit {
+        margin: 0 auto;
+
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+
+    .success {
+      text-align: center;
+      
+      h2 {
+        padding-bottom: 40px;
+      }
+    }
+  }
+}
+
+// Modal window animation
+
+.fade-enter-active {
+  transition: opacity 0.4s ease;
+}
+
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// Success window animation
+
+.pop-enter-active {
+  transition: opacity 1s ease;
+}
+
+.pop-leave-active {
+  height: 280px;
+  transition: opacity 0.2s ease, height 0.4s ease;
+}
+
+.pop-enter-from {
+  opacity: 0;
+}
+
+.pop-leave-to {
+  opacity: 0;
+  height: 0px;
+}
